@@ -30,11 +30,6 @@ public class MemberController {
     @Autowired
     private IMemberService memberService;
 
-    @PostMapping("/login-by-password")
-    public CommonResponse<UserLoginDTO> loginByPassword(){
-        return null;
-    }
-
     @PostMapping("/register-by-tel")
     public CommonResponse<Boolean> registerByTel(@RequestBody @Validated RegisterDTO registerDTO) throws Exception {
         return CommonResponse.success(memberService.registerByTelWithWithSyncCall(registerDTO));
