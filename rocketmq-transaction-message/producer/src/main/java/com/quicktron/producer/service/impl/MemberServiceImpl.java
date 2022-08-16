@@ -88,7 +88,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberMapper, Member> impleme
             throw new RuntimeException("注册失败...");
         }
         //后面可能还有业务需要执行，如果后面的业务继续执行，出现异常导致注册失败，这个时候优惠券那边就会出现脏数据
-        
+        int i = 1/0;
         //退一万步说，我把发优惠券的方法放到整个注册流程的最后面，系统可能在执行道最后一步的时候发生宕机。导致本地事务提交失败
         //这个时候优惠券那边也会产生脏数据
         return Boolean.TRUE;

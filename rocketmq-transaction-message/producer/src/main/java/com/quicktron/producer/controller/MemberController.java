@@ -32,8 +32,8 @@ public class MemberController {
 
     @PostMapping("/register-by-tel")
     public CommonResponse<Boolean> registerByTel(@RequestBody @Validated RegisterDTO registerDTO) throws Exception {
-        return CommonResponse.success(memberService.registerByTelWithWithSyncCall(registerDTO));
-        // return CommonResponse.success(memberService.registerByTelWithRocketMqTx(registerDTO));
+        // return CommonResponse.success(memberService.registerByTelWithWithSyncCall(registerDTO));
+        return CommonResponse.success(memberService.registerByTelWithRocketMqTx(registerDTO));
     }
 
     
